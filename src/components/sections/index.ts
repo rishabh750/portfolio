@@ -1,0 +1,6 @@
+export { aboutSection } from './aboutSection'
+export { skillsSection } from './skillsSection'
+export { experienceSection } from './experienceSection'
+export { projectsSection } from './projectsSection'
+export { educationSection } from './educationSection'
+export { awardsSection } from './awardsSection'
