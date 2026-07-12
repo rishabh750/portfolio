@@ -1,4 +1,10 @@
-// Shared types for the parsed resume data (loaded from public/resume.txt).
+// Shared types for the resume data (loaded from public/data.json).
+
+/** Skills split into technical and managerial chip stacks. */
+export interface SkillSet {
+  technical?: string[]
+  managerial?: string[]
+}
 
 export interface Profile {
   name: string
@@ -29,11 +35,8 @@ export interface Experience {
   deliverables: string[]
   /** "Key Org-Level Impact" bullets */
   impact: string[]
-  /** skills used in this role, split into technical and managerial chip stacks */
-  skills?: {
-    technical?: string[]
-    managerial?: string[]
-  }
+  /** skills used in this role */
+  skills?: SkillSet
 }
 
 export interface Education {
@@ -48,11 +51,8 @@ export interface Project {
   org: string
   dates: string
   bullets: string[]
-  /** skills used in this project, split into technical and managerial chip stacks */
-  skills?: {
-    technical?: string[]
-    managerial?: string[]
-  }
+  /** skills used in this project */
+  skills?: SkillSet
 }
 
 export interface Resume {

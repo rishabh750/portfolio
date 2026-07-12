@@ -1,9 +1,11 @@
 import type { SkillGroup } from '../../data/types'
+import { ChipRow } from '../ui/ChipRow'
 import { Panel } from '../ui/Panel'
 import { leaf } from '../ui/TreeColumns'
 import type { TreeNode } from '../ui/TreeColumns'
 
-// Skills: one branch per category, each revealing a chip list.
+// Skills: one branch per category, each revealing a themed chip list.
+// Leadership-style categories get the managerial theme; the rest, technical.
 export function skillsSection(skills: SkillGroup[]): TreeNode {
   return {
     title: 'Skills',
@@ -16,13 +18,7 @@ export function skillsSection(skills: SkillGroup[]): TreeNode {
           <div className="leaf-body">
             <Panel>
               <h3 className="skills__category">{group.category}</h3>
-              <ul className="chip-row">
-                {group.items.map((item) => (
-                  <li key={item} className={`chip chip--${kind}`}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <ChipRow items={group.items} kind={kind} />
             </Panel>
           </div>,
         ),

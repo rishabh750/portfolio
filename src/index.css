@@ -425,11 +425,6 @@ a {
 }
 
 /* awards */
-.awards-stack {
-  list-style: none;
-  display: grid;
-  gap: 12px;
-}
 .awards__row {
   display: flex;
   align-items: flex-start;

@@ -1,39 +1,32 @@
+import type { SkillSet } from '../../data/types'
+import { ChipRow } from './ChipRow'
+import type { ChipKind } from './ChipRow'
 import { Panel } from './Panel'
 
 // A "Skills" panel with two colour-themed chip rows: technical first, then
 // managerial on the next line. Shared by experience roles and academic
 // projects. Renders nothing if no skills are provided.
 interface SkillStacksProps {
-  skills?: {
-    technical?: string[]
-    managerial?: string[]
-  }
+  skills?: SkillSet
 }
+
+const ROWS: ChipKind[] = ['technical', 'managerial']
 
 export function SkillStacks({ skills }: SkillStacksProps) {
   if (!skills) return null
 
-  const rows = [
-    ['technical', skills.technical],
-    ['managerial', skills.managerial],
-  ] as const
+  const rows = ROWS.map((kind) => [kind, skills[kind]] as const).filter(
+    (r): r is [ChipKind, string[]] => !!r[1] && r[1].length > 0,
+  )
 
-  if (!rows.some(([, items]) => items && items.length > 0)) return null
+  if (rows.length === 0) return null
 
   return (
     <Panel>
       <p className="panel__title">Skills</p>
-      {rows.map(([kind, items]) =>
-        items && items.length > 0 ? (
-          <ul key={kind} className="chip-row">
-            {items.map((s) => (
-              <li key={s} className={`chip chip--${kind}`}>
-                {s}
-              </li>
-            ))}
-          </ul>
-        ) : null,
-      )}
+      {rows.map(([kind, items]) => (
+        <ChipRow key={kind} items={items} kind={kind} />
+      ))}
     </Panel>
   )
 }
