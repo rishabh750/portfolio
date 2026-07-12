@@ -6,10 +6,10 @@
     "availability": "Available from October 2026 — UK Graduate visa, no sponsorship required.",
     "summary": "Senior Software Engineer with 7+ years building and scaling the backend systems behind high-traffic products — pricing engines, cloud-native microservices, and low-latency APIs that stay fast and reliable under real-world load. I like owning services end to end: designing them, scaling them, keeping them cheap to run, and being the person on call when they matter most. Currently completing an MSc in Software Engineering at the University of St Andrews, specialising in distributed systems, parallel computing and technical product strategy.",
     "highlights": [
-      "Led a dual migration (Java 8 to 21, AWS to GCP) with zero rollbacks and 99.9999% availability, cutting post-migration latency from 250ms to 20ms.",
-      "Held Kubernetes at 75% utilisation through the Black Friday 2024 peak and halved database I/O latency via restructured indexing.",
-      "Cut annual service costs by ~50% and reduced squad on-call load by 70% through automation and resource tuning.",
-      "Launched Virtual Advisor to 1M+ merchants, generating 8M+ recommendations across 5 pilot use cases."
+      "- Led a dual migration (Java 8 to 21, AWS to GCP) with zero rollbacks and 99.9999% availability, cutting post-migration latency from 250ms to 20ms.",
+      "- Held Kubernetes at 75% utilisation through the Black Friday 2024 peak and halved database I/O latency via restructured indexing.",
+      "- Cut annual service costs by ~50% and reduced squad on-call load by 70% through automation and resource tuning.",
+      "- Launched Virtual Advisor to 1M+ merchants, generating 8M+ recommendations across 5 pilot use cases."
     ],
     "links": {
       "email": "rishabhjoshi7@gmail.com",
@@ -19,14 +19,99 @@
     }
   },
   "skills": [
-    { "category": "Programming Languages", "items": ["Java", "Python", "SQL", "TypeScript", "JavaScript"] },
-    { "category": "Backend & Architecture", "items": ["Spring Boot", "Microservices", "REST APIs", "gRPC", "Distributed Systems", "Microkernel Architecture", "Event-Driven Architecture", "Domain-Driven Design"] },
-    { "category": "Cloud & Infrastructure", "items": ["AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "CI/CD"] },
-    { "category": "Engineering Practices", "items": ["System Design", "Performance Tuning", "Parallel Programming", "Scalability", "Observability", "Agile Delivery", "Test-Driven Development (TDD)", "Unit & Integration Testing", "Code Review"] },
-    { "category": "Frontend Development", "items": ["React", "Redux", "HTML5", "CSS3", "Vite"] },
-    { "category": "Data & Messaging", "items": ["Redis", "Kafka", "MySQL", "PostgreSQL", "MongoDB", "RabbitMQ"] },
-    { "category": "Observability & Tools", "items": ["LGTM & ELK", "Prometheus", "Cursor", "Gemini", "Claude", "Grafana", "Git", "Jira"] },
-    { "category": "Leadership", "items": ["Service Ownership", "Team Mentoring", "Stakeholder Management", "Incident Response", "Cross-functional Collaboration", "On-Call/SRE Management"] }
+    {
+      "category": "Programming Languages",
+      "items": [
+        "Java",
+        "Python",
+        "SQL",
+        "TypeScript",
+        "JavaScript"
+      ]
+    },
+    {
+      "category": "Backend & Architecture",
+      "items": [
+        "Spring Boot",
+        "Microservices",
+        "REST APIs",
+        "gRPC",
+        "Distributed Systems",
+        "Microkernel Architecture",
+        "Event-Driven Architecture",
+        "Domain-Driven Design"
+      ]
+    },
+    {
+      "category": "Cloud & Infrastructure",
+      "items": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "CI/CD"
+      ]
+    },
+    {
+      "category": "Engineering Practices",
+      "items": [
+        "System Design",
+        "Performance Tuning",
+        "Parallel Programming",
+        "Scalability",
+        "Observability",
+        "Agile Delivery",
+        "Test-Driven Development (TDD)",
+        "Unit & Integration Testing",
+        "Code Review"
+      ]
+    },
+    {
+      "category": "Frontend Development",
+      "items": [
+        "React",
+        "Redux",
+        "HTML5",
+        "CSS3",
+        "Vite"
+      ]
+    },
+    {
+      "category": "Data & Messaging",
+      "items": [
+        "Redis",
+        "Kafka",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "RabbitMQ"
+      ]
+    },
+    {
+      "category": "Observability & Tools",
+      "items": [
+        "LGTM & ELK",
+        "Prometheus",
+        "Cursor",
+        "Gemini",
+        "Claude",
+        "Grafana",
+        "Git",
+        "Jira"
+      ]
+    },
+    {
+      "category": "Leadership",
+      "items": [
+        "Service Ownership",
+        "Team Mentoring",
+        "Stakeholder Management",
+        "Incident Response",
+        "Cross-functional Collaboration",
+        "On-Call/SRE Management"
+      ]
+    }
   ],
   "experience": [
     {
@@ -34,99 +119,156 @@
       "role": "Senior Software Engineer (SDE 3)",
       "dates": "Sep 2023 – Aug 2025",
       "location": "Bengaluru, India",
-      "groups": [
-        {
-          "title": "Pricing & Promotions Team — Supervised a squad of 3 as the Service Owner, to design, scale and operate 3 Pricing Services producing Global Price Quotations.",
-          "bullets": [
-            "Led phased rollout of Redis Cache for high-throughput APIs (negligible billing impact) and tuned Kubernetes to 75% utilisation for Black Friday 2024 peak via HPA fine-tuning, halving database I/O latency through restructured indexing.",
-            "Migrated multiple services from Java 8 to 21 and AWS to GCP with zero rollbacks and 99.9999% availability, while partnering with stakeholders to slash post-migration latency from 250ms to 20ms.",
-            "Redesigned Sale creation flow, dropping scheduling time from 32 to 4 hours while eradicating scheduling failures and improving code quality to Grade \"A\" across SonarQube Quality Gate."
-          ]
-        },
-        {
-          "title": "Key org-level impact",
-          "bullets": [
-            "Reorganised Confluence documentation (utilising Cursor AI and Gemini Pro) and redefined Standard Operating Procedures to improve cross-team collaboration.",
-            "Reduced annual service costs by 50% via incremental cleanups and finetuning resource requirements.",
-            "Identified recurring bottlenecks and stakeholder gaps to curtail squad On-Call alerts by 70% and built automated reporting tools to eliminate daily On-Call support for the operations team."
-          ]
-        }
-      ]
+      "deliverables": [
+        "Pricing & Promotions Team — Supervised a squad of 3 as the Service Owner, to design, scale and operate 3 Pricing Services producing Global Price Quotations.",
+        "- Led phased rollout of Redis Cache for high-throughput APIs (negligible billing impact) and tuned Kubernetes to 75% utilisation for Black Friday 2024 peak via HPA fine-tuning, halving database I/O latency through restructured indexing.",
+        "- Migrated multiple services from Java 8 to 21 and AWS to GCP with zero rollbacks and 99.9999% availability, while partnering with stakeholders to slash post-migration latency from 250ms to 20ms.",
+        "- Redesigned Sale creation flow, dropping scheduling time from 32 to 4 hours while eradicating scheduling failures and improving code quality to Grade \"A\" across SonarQube Quality Gate."
+      ],
+      "impact": [
+        "- Reorganised Confluence documentation (utilising Cursor AI and Gemini Pro) and redefined Standard Operating Procedures to improve cross-team collaboration.",
+        "- Reduced annual service costs by 50% via incremental cleanups and finetuning resource requirements.",
+        "- Identified recurring bottlenecks and stakeholder gaps to curtail squad On-Call alerts by 70% and built automated reporting tools to eliminate daily On-Call support for the operations team."
+      ],
+      "skills": {
+        "technical": [
+          "Java",
+          "Spring Boot",
+          "Kafka",
+          "Kubernetes",
+          "AWS",
+          "MySQL",
+          "Redis",
+          "Microservices"
+        ],
+        "managerial": [
+          "Mentorship",
+          "Code Reviews",
+          "Cross-team Collaboration",
+          "Roadmap Planning",
+          "Incident Management"
+        ]
+      }
     },
     {
       "company": "Truera Private Limited",
       "role": "Software Engineer (SDE 2)",
       "dates": "Aug 2022 – Aug 2023",
       "location": "Bangalore, India",
-      "groups": [
-        {
-          "title": "Query Service — Built a highly scalable data read layer for TruEra's AI Observability platform (now part of Snowflake).",
-          "bullets": [
-            "Redesigned SQL query generation to support complex filters and paginated fetch from an Iceberg data lake.",
-            "Designed and executed Locust load tests to rectify bottlenecks and achieve 20% RPC latency reduction."
-          ]
-        }
-      ]
+      "deliverables": [
+        "Query Service — Built a highly scalable data read layer for TruEra's AI Observability platform (now part of Snowflake).",
+        "- Redesigned SQL query generation to support complex filters and paginated fetch from an Iceberg data lake.",
+        "- Designed and executed Locust load tests to rectify bottlenecks and achieve 20% RPC latency reduction."
+      ],
+      "impact": [],
+      "skills": {
+        "technical": [
+          "Python",
+          "Java",
+          "Spring Boot",
+          "Kafka",
+          "PostgreSQL",
+          "Docker",
+          "Kubernetes"
+        ],
+        "managerial": [
+          "Code Reviews",
+          "Agile / Scrum",
+          "Cross-team Collaboration"
+        ]
+      }
     },
     {
       "company": "Groupon",
       "role": "Software Engineer (SDE 2)",
       "dates": "Apr 2021 – Aug 2022",
       "location": "Bangalore, India",
-      "groups": [
-        {
-          "title": "Campaign Editor — Led a team of 6 to develop a self-service tool for merchants to request edits on live campaigns, using React to build a dynamic, state-managed interface for complex deal configurations.",
-          "bullets": [
-            "Refactored Salesforce case creation & automated pipeline cleanup, yielding 20% latency improvement and 50% drop in manual intervention."
-          ]
-        },
-        {
-          "title": "Virtual Advisor — Created a recommendation platform from scratch, delivering a high-performance React dashboard.",
-          "bullets": [
-            "Launched the MVP for 1M+ merchants, generating 8M+ recommendations across 5 pilot use cases."
-          ]
-        },
-        {
-          "title": "Key org-level impact",
-          "bullets": [
-            "CAP (Channels and Platform) Asha Knowledge Sharing (Organiser & Mentor) — 6 months.",
-            "60% fewer pager alerts via improved monitoring & best practices (mentored team)."
-          ]
-        }
-      ]
+      "deliverables": [
+        "Campaign Editor — Led a team of 6 to develop a self-service tool for merchants to request edits on live campaigns, using React to build a dynamic, state-managed interface for complex deal configurations.",
+        "- Refactored Salesforce case creation & automated pipeline cleanup, yielding 20% latency improvement and 50% drop in manual intervention.",
+        "Virtual Advisor — Created a recommendation platform from scratch, delivering a high-performance React dashboard.",
+        "- Launched the MVP for 1M+ merchants, generating 8M+ recommendations across 5 pilot use cases."
+      ],
+      "impact": [
+        "- CAP (Channels and Platform) Asha Knowledge Sharing (Organiser & Mentor) — 6 months.",
+        "- 60% fewer pager alerts via improved monitoring & best practices (mentored team)."
+      ],
+      "skills": {
+        "technical": [
+          "Java",
+          "Spring Boot",
+          "Kafka",
+          "MySQL",
+          "Redis",
+          "REST APIs"
+        ],
+        "managerial": [
+          "Code Reviews",
+          "Mentorship",
+          "Agile / Scrum"
+        ]
+      }
     },
     {
       "company": "Groupon",
       "role": "Software Engineer (SDE 1)",
       "dates": "Oct 2019 – Mar 2021",
       "location": "Bangalore, India",
-      "groups": [
-        {
-          "title": "Campaign Builder — Self-service tool for merchants to create campaigns.",
-          "bullets": [
-            "Accelerated the #HelpSaveLocal COVID-19 campaign by developing the 1-Click Deal feature in React and Java, slashing deal draft-to-live time from 15 days to minutes.",
-            "Developed a relevance-improvement POC with 70% A/B adoption (Kibana report) and 6% reduction in deal rejection, optimising AWS SageMaker fetch from 140ms to 50ms."
-          ]
-        }
-      ]
+      "deliverables": [
+        "Campaign Builder — Self-service tool for merchants to create campaigns.",
+        "- Accelerated the #HelpSaveLocal COVID-19 campaign by developing the 1-Click Deal feature in React and Java, slashing deal draft-to-live time from 15 days to minutes.",
+        "- Developed a relevance-improvement POC with 70% A/B adoption (Kibana report) and 6% reduction in deal rejection, optimising AWS SageMaker fetch from 140ms to 50ms."
+      ],
+      "impact": [],
+      "skills": {
+        "technical": [
+          "Java",
+          "Spring",
+          "MySQL",
+          "REST APIs",
+          "JUnit"
+        ],
+        "managerial": [
+          "Agile / Scrum"
+        ]
+      }
     },
     {
       "company": "Infosys Ltd.",
       "role": "Software Engineer (SDE 1)",
       "dates": "Dec 2017 – Sep 2019",
       "location": "Bengaluru, India",
-      "groups": [
-        {
-          "bullets": [
-            "As part of the Sense Team at Infosys Center of Emerging Technologies (R&D unit), optimised latencies by 50% for Digital Twin and Location-Based Services POCs, demonstrated at AWS re:Invent 2018, World Economic Forum 2019 and Australian Open 2019."
-          ]
-        }
-      ]
+      "deliverables": [
+        "- As part of the Sense Team at Infosys Center of Emerging Technologies (R&D unit), optimised latencies by 50% for Digital Twin and Location-Based Services POCs, demonstrated at AWS re:Invent 2018, World Economic Forum 2019 and Australian Open 2019."
+      ],
+      "impact": [],
+      "skills": {
+        "technical": [
+          "Java",
+          "Spring",
+          "Oracle DB",
+          "SQL",
+          "JavaScript"
+        ],
+        "managerial": [
+          "Agile / Scrum"
+        ]
+      }
     }
   ],
   "education": [
-    { "degree": "MSc, Software Engineering", "institution": "University of St Andrews", "location": "St Andrews, United Kingdom", "dates": "Sep 2025 – Aug 2026" },
-    { "degree": "B.Tech, Computer Science and Engineering", "institution": "Guru Gobind Singh Indraprastha University", "location": "New Delhi, India", "dates": "Aug 2013 – May 2017" }
+    {
+      "degree": "MSc, Software Engineering",
+      "institution": "University of St Andrews",
+      "location": "St Andrews, United Kingdom",
+      "dates": "Sep 2025 – Aug 2026"
+    },
+    {
+      "degree": "B.Tech, Computer Science and Engineering",
+      "institution": "Guru Gobind Singh Indraprastha University",
+      "location": "New Delhi, India",
+      "dates": "Aug 2013 – May 2017"
+    }
   ],
   "awards": [
     "Quarterly Leadership & Ownership Star Award (2020 & 2021), Groupon",
@@ -140,43 +282,105 @@
       "org": "University of St Andrews",
       "dates": "May 2026 – Aug 2026",
       "bullets": [
-        "Analysed the current edtech landscape through a product lens, identifying delayed feedback and shallow engagement metrics as the core gap between assessment and genuine learning.",
-        "Defined the Vision, strategy, and value proposition for a \"Testing-as-Learning\" application, positioning immediate formative feedback as the differentiator against retention-driven gamified platforms.",
-        "Built the application to deliver real-time rationale at the point of assessment, turning flat test UIs into interactive conceptual learning experiences."
-      ]
+        "- Analysed the current edtech landscape through a product lens, identifying delayed feedback and shallow engagement metrics as the core gap between assessment and genuine learning.",
+        "- Defined the Vision, strategy, and value proposition for a \"Testing-as-Learning\" application, positioning immediate formative feedback as the differentiator against retention-driven gamified platforms.",
+        "- Built the application to deliver real-time rationale at the point of assessment, turning flat test UIs into interactive conceptual learning experiences."
+      ],
+      "skills": {
+        "technical": [
+          "Data Analysis",
+          "Python",
+          "Learning Analytics"
+        ],
+        "managerial": [
+          "Product Strategy",
+          "Value Proposition",
+          "Positioning",
+          "User Research"
+        ]
+      }
     },
     {
       "name": "Distributed Consensus & Fault Tolerance Analysis",
       "org": "University of St Andrews",
       "dates": "Feb 2026 – Apr 2026",
       "bullets": [
-        "Evaluated the Paxos consensus protocol under asynchronous failures (node, broker, message drops) and designed a heartbeat-monitoring architecture, analysing latency vs. safety trade-offs."
-      ]
+        "- Evaluated the Paxos consensus protocol under asynchronous failures (node, broker, message drops) and designed a heartbeat-monitoring architecture, analysing latency vs. safety trade-offs."
+      ],
+      "skills": {
+        "technical": [
+          "Distributed Systems",
+          "Raft",
+          "Paxos",
+          "Fault Tolerance",
+          "Java"
+        ],
+        "managerial": [
+          "Research",
+          "Technical Writing"
+        ]
+      }
     },
     {
       "name": "Multicore Performance & Parallel Framework Analysis",
       "org": "University of St Andrews",
       "dates": "Feb 2026 – Apr 2026",
       "bullets": [
-        "Benchmarked data and task parallelism across ARM and x86 systems (Erlang, Haskell), correlating performance with scheduling overheads and workload granularity thresholds."
-      ]
+        "- Benchmarked data and task parallelism across ARM and x86 systems (Erlang, Haskell), correlating performance with scheduling overheads and workload granularity thresholds."
+      ],
+      "skills": {
+        "technical": [
+          "C++",
+          "OpenMP",
+          "MPI",
+          "Parallel Computing",
+          "Benchmarking"
+        ],
+        "managerial": [
+          "Research",
+          "Technical Writing"
+        ]
+      }
     },
     {
       "name": "Technical Product Strategy & Market Development",
       "org": "University of St Andrews",
       "dates": "Sep 2025 – Nov 2025",
       "bullets": [
-        "Developed product strategy and a financial model for a multi-sided SaaS marketplace, focusing on customer discovery, competitive positioning, and growth opportunities.",
-        "Applied CAC, LTV and churn analysis with Kano Prioritisation and Lean Startup Canvas to define a scalable roadmap and monetisation strategy."
-      ]
+        "- Developed product strategy and a financial model for a multi-sided SaaS marketplace, focusing on customer discovery, competitive positioning, and growth opportunities.",
+        "- Applied CAC, LTV and churn analysis with Kano Prioritisation and Lean Startup Canvas to define a scalable roadmap and monetisation strategy."
+      ],
+      "skills": {
+        "technical": [
+          "Market Analysis"
+        ],
+        "managerial": [
+          "Product Strategy",
+          "Go-to-Market",
+          "Positioning",
+          "Roadmapping"
+        ]
+      }
     },
     {
       "name": "ZEPHYR-II: Unmanned Aerial Vehicle",
       "org": "AUVSI SUAS 2016",
       "dates": "Jul 2015 – Jun 2016",
       "bullets": [
-        "As Captain and Software Lead of Zeppelin FC 26, built a UAV and guided a team of 10 to AUVSI SUAS 2016, USA — securing a $1500 cash prize and the Dawn Jaeger Tenacity Award."
-      ]
+        "- As Captain and Software Lead of Zeppelin FC 26, built a UAV and guided a team of 10 to AUVSI SUAS 2016, USA — securing a $1500 cash prize and the Dawn Jaeger Tenacity Award."
+      ],
+      "skills": {
+        "technical": [
+          "Embedded C",
+          "Control Systems",
+          "Sensor Fusion",
+          "MATLAB"
+        ],
+        "managerial": [
+          "Team Leadership",
+          "Project Planning"
+        ]
+      }
     }
   ]
 }

@@ -1,10 +1,13 @@
 import type { Project } from '../../data/types'
 import { BulletList } from '../ui/BulletList'
 import { CardHead } from '../ui/CardHead'
+import { Panel } from '../ui/Panel'
+import { SkillStacks } from '../ui/SkillStacks'
 import { leaf } from '../ui/TreeColumns'
 import type { TreeNode } from '../ui/TreeColumns'
 
-// Projects: one branch per project, revealing a card of bullets.
+// Projects: one branch per project, revealing a card whose header floats over
+// an opaque bullets panel plus a skills panel.
 export function projectsSection(projects: Project[]): TreeNode {
   return {
     title: 'Projects',
@@ -12,10 +15,13 @@ export function projectsSection(projects: Project[]): TreeNode {
       title: p.name,
       children: leaf(
         p.name,
-        <>
+        <div className="leaf-body">
           <CardHead title={p.name} meta={`${p.org} · ${p.dates}`} />
-          <BulletList items={p.bullets} />
-        </>,
+          <Panel>
+            <BulletList items={p.bullets} />
+          </Panel>
+          <SkillStacks skills={p.skills} />
+        </div>,
       ),
     })),
   }

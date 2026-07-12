@@ -1,14 +1,20 @@
 import { createTheme } from '@mui/material/styles'
 
-// Minimal MUI theme. Surfaces (Card, buttons) are styled with the project's
-// own CSS variables (see index.css) so they follow the existing
-// prefers-color-scheme light/dark system automatically.
+// Single source of truth for typography. `fontFamily` is fed to MUI here and
+// also exposed to the plain CSS as the `--font` variable (see main.tsx), so the
+// whole app shares one font definition maintained in this file.
+export const fontFamily =
+  "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+
 export const theme = createTheme({
   typography: {
-    fontFamily: 'inherit',
+    fontFamily,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 700,
   },
   palette: {
-    primary: { main: '#ff9e2c' },
+    primary: { main: '#f07d28' },
   },
   shape: { borderRadius: 14 },
 })

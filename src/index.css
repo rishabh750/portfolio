@@ -5,32 +5,43 @@
    ============================================================ */
 
 :root {
-  --bg: #0a0603;
-  --bg-elev: #1b130a;
-  --bg-elev-2: #271b0e;
-  --border: #3d2e19;
-  --text: #f6ecdd;
-  --text-dim: #cbb896;
-  --text-faint: #93805f;
-  --accent: #ff9e2c;
-  --accent-soft: rgba(255, 158, 44, 0.14);
-  --accent-strong: #ffcb54;
+  --bg: #0e1013;
+  --bg-elev: #181b1f;
+  --bg-elev-2: #22262b;
+  --border: #333a41;
+  --text: #eef1f4;
+  --text-dim: #a6b0b8;
+  --text-faint: #6d777f;
+  --accent: #f07d28;
+  --accent-soft: rgba(240, 125, 40, 0.14);
+  --accent-strong: #ffb64d;
+  /* managerial-skill chip theme (yellow-gold) */
+  --accent-2: #e8c14a;
+  --accent-2-soft: rgba(232, 193, 74, 0.14);
+  /* dark tint layered over bg.jpg so cards stay readable */
+  --bg-scrim: linear-gradient(rgba(14, 16, 19, 0.82), rgba(14, 16, 19, 0.9));
+  /* translucent glass for the leaf group card (holds opaque content panels) */
+  --group-glass: rgba(24, 27, 31, 0.28);
   --radius-sm: 9px;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* --font is injected from theme.ts (see main.tsx) */
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #fdf7ec;
+    --bg: #f2f4f7;
     --bg-elev: #ffffff;
-    --bg-elev-2: #fbf1dd;
-    --border: #ecd9ba;
-    --text: #241705;
-    --text-dim: #6d5836;
-    --text-faint: #9c8763;
-    --accent: #e07b00;
-    --accent-soft: rgba(224, 123, 0, 0.1);
-    --accent-strong: #b85f00;
+    --bg-elev-2: #e8ecf1;
+    --border: #d4dae1;
+    --text: #14181c;
+    --text-dim: #4b555d;
+    --text-faint: #7b858d;
+    --accent: #df6a10;
+    --accent-soft: rgba(223, 106, 16, 0.1);
+    --accent-strong: #b8560c;
+    --accent-2: #a97c0a;
+    --accent-2-soft: rgba(169, 124, 10, 0.1);
+    --bg-scrim: linear-gradient(rgba(242, 244, 247, 0.86), rgba(242, 244, 247, 0.92));
+    --group-glass: rgba(255, 255, 255, 0.32);
   }
 }
 
@@ -48,7 +59,7 @@ body,
 
 body {
   font-family: var(--font);
-  background: var(--bg);
+  background: var(--bg-scrim), url('/bg.jpg') center / cover no-repeat fixed;
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -111,7 +122,7 @@ a {
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
-  padding: 28px 28px 8px;
+  padding: 10px 28px 8px;
 }
 .tree {
   flex: 1 1 auto;
@@ -169,6 +180,13 @@ a {
   font-size: 0.95rem;
   outline: none;
 }
+/* per-level column widths: level 0 (sections) narrower, level 1 wider */
+.tree__col--l0 .tree__branch {
+  width: 160px;
+}
+.tree__col--l1 .tree__branch {
+  width: 310px;
+}
 .tree__chevron {
   color: var(--text-faint);
   transition: color 0.15s ease, transform 0.15s ease;
@@ -186,6 +204,12 @@ a {
 .tree__branch:focus-visible {
   --card-line: var(--accent);
 }
+.tree__branch-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
 .tree__branch-title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -193,9 +217,33 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.tree__branch-subtitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-faint);
+}
 .tree__leaf {
   width: 100%;
   align-self: stretch;
+  --card-bg: var(--group-glass);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* leaf body: stack of opaque content panels inside the translucent group card */
+.leaf-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.panel {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 18px 14px;
+}
+.panel > :first-child {
+  margin-top: 0;
 }
 
 /* ============================================================
@@ -263,6 +311,21 @@ a {
   border: 1px solid var(--border);
   color: var(--text-dim);
 }
+/* skill-chip colour themes: technical (orange) vs managerial (yellow-gold) */
+.chip--technical {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 42%, transparent);
+  color: var(--accent-strong);
+}
+.chip--managerial {
+  background: var(--accent-2-soft);
+  border-color: color-mix(in srgb, var(--accent-2) 42%, transparent);
+  color: var(--accent-2);
+}
+/* technical row then managerial row on the next line */
+.chip-row + .chip-row {
+  margin-top: 8px;
+}
 
 /* card heading + meta line */
 .card-head {
@@ -289,7 +352,7 @@ a {
   color: var(--accent);
 }
 
-/* accent-bulleted list */
+/* list of bullet + plain-text lines (all one font size) */
 .bullet-list {
   list-style: none;
   display: flex;
@@ -297,20 +360,21 @@ a {
   gap: 8px;
 }
 .bullet-list li {
-  position: relative;
-  padding-left: 18px;
   color: var(--text-dim);
   font-size: 0.95rem;
 }
-.bullet-list li::before {
-  content: '';
+/* bullet lines carry the accent marker; plain lines have no indent/marker */
+.bullet-list__bullet {
+  position: relative;
+  padding-left: 20px;
+}
+.bullet-list__bullet::before {
+  content: '▹';
   position: absolute;
-  left: 2px;
-  top: 10px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 /* ============================================================
@@ -321,33 +385,6 @@ a {
 .about-leaf .link-list {
   margin-top: 16px;
 }
-.about-summary {
-  margin-top: 18px;
-  font-size: 1.15rem;
-  color: var(--text-dim);
-}
-.about-highlights {
-  margin: 18px 0 0;
-  padding: 16px 0 0;
-  border-top: 1px solid var(--border);
-  list-style: none;
-  display: grid;
-  gap: 9px;
-}
-.about-highlights li {
-  position: relative;
-  padding-left: 22px;
-  color: var(--text-dim);
-  font-size: 0.95rem;
-}
-.about-highlights li::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
 
 /* skills */
 .skills__category {
@@ -357,27 +394,17 @@ a {
   color: var(--text);
 }
 
-/* experience groups */
-.exp-group {
-  margin-top: 12px;
-}
-.exp-group__title {
-  font-size: 0.95rem;
-  color: var(--text-dim);
-  font-weight: 500;
+/* panel section heading — secondary label format */
+.panel__title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
   margin-bottom: 8px;
 }
 
 /* education */
-.edu-stack {
-  display: flex;
-  flex-direction: column;
-}
-.edu-entry + .edu-entry {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-}
 .edu-entry__degree {
   font-size: 1.02rem;
   font-weight: 700;
@@ -417,9 +444,6 @@ a {
 }
 
 /* justified body copy */
-.about-summary,
-.about-highlights li,
-.exp-group__title,
 .bullet-list li {
   text-align: justify;
   text-justify: inter-word;
@@ -457,16 +481,6 @@ a {
   to {
     transform: rotate(360deg);
   }
-}
-
-/* ---------- FOOTER ---------- */
-.footer {
-  flex: 0 0 auto;
-  border-top: 1px solid var(--border);
-  padding: 10px 24px;
-  text-align: center;
-  color: var(--text-faint);
-  font-size: 0.8rem;
 }
 
 /* ---------- RESPONSIVE ---------- */

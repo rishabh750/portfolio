@@ -25,12 +25,6 @@ export default function App() {
       <main className="app">
         <PortfolioTree />
       </main>
-
-      <footer className="footer">
-        <p>
-          © {new Date().getFullYear()} {profile.name} · Built with React, TypeScript & Vite
-        </p>
-      </footer>
     </>
   )
 }

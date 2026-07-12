@@ -9,6 +9,8 @@ import { Card } from './Card'
 // column grows to fill the remaining width.
 export interface TreeNode {
   title: string
+  /** optional second line under the title on a branch card (subheading font) */
+  subtitle?: string
   children?: TreeNode[]
   content?: ReactNode
   /** extra class on the leaf content card */
@@ -72,11 +74,15 @@ export function TreeColumns({ nodes, ariaLabel, defaultPath = [0] }: TreeColumns
       {columns.map((col, c) => {
         const leafCol = col.length > 0 && isLeaf(col[0])
         return (
-          <div className={`tree__col${leafCol ? ' tree__col--leaf' : ''}`} role="group" key={c}>
+          <div className={`tree__col tree__col--l${c}${leafCol ? ' tree__col--leaf' : ''}`} role="group" key={c}>
             {col.map((node, i) => {
               if (isLeaf(node)) {
                 return (
-                  <Card key={i} className={`tree__leaf${node.className ? ` ${node.className}` : ''}`} sx={{ p: 3 }}>
+                  <Card
+                    key={i}
+                    className={`tree__leaf${node.className ? ` ${node.className}` : ''}`}
+                    sx={{ px: 3, pt: 1.5, pb: 3 }}
+                  >
                     {node.content}
                   </Card>
                 )
@@ -94,7 +100,10 @@ export function TreeColumns({ nodes, ariaLabel, defaultPath = [0] }: TreeColumns
                   onFocus={() => select(c, i)}
                   onClick={() => select(c, i)}
                 >
-                  <span className="tree__branch-title">{node.title}</span>
+                  <span className="tree__branch-label">
+                    <span className="tree__branch-title">{node.title}</span>
+                    {node.subtitle && <span className="tree__branch-subtitle">{node.subtitle}</span>}
+                  </span>
                   <ChevronRightRoundedIcon fontSize="small" className="tree__chevron" />
                 </Card>
               )

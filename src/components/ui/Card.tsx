@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles'
 // can recolour it without a specificity fight.
 export const Card = styled(MuiCard)({
   position: 'relative',
-  backgroundColor: 'var(--bg-elev)',
+  backgroundColor: 'var(--card-bg, var(--bg-elev))',
   color: 'var(--text)',
   border: 'none',
   borderRadius: 12,

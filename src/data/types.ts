@@ -20,17 +20,20 @@ export interface SkillGroup {
   items: string[]
 }
 
-export interface ExperienceGroup {
-  title?: string
-  bullets: string[]
-}
-
 export interface Experience {
   company: string
   role: string
   dates: string
   location: string
-  groups: ExperienceGroup[]
+  /** "Key Project Deliverables" bullets */
+  deliverables: string[]
+  /** "Key Org-Level Impact" bullets */
+  impact: string[]
+  /** skills used in this role, split into technical and managerial chip stacks */
+  skills?: {
+    technical?: string[]
+    managerial?: string[]
+  }
 }
 
 export interface Education {
@@ -45,6 +48,11 @@ export interface Project {
   org: string
   dates: string
   bullets: string[]
+  /** skills used in this project, split into technical and managerial chip stacks */
+  skills?: {
+    technical?: string[]
+    managerial?: string[]
+  }
 }
 
 export interface Resume {
