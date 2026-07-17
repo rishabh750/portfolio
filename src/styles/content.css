@@ -30,23 +30,36 @@
   100% { box-shadow: 0 0 0 0 transparent; }
 }
 
-/* inline row of links */
-.link-list {
-  list-style: none;
+/* contact chips (icon + label) */
+.contact-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
 }
-.link-list a {
-  color: var(--text-faint);
-  font-size: 0.9rem;
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.85rem;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
-.link-list a:hover {
+.contact-chip:hover {
   color: var(--accent);
-  border-bottom-color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: var(--accent-soft);
+}
+.contact-chip__icon {
+  display: inline-flex;
+}
+.contact-chip__icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* chip cloud */
@@ -145,7 +158,7 @@
 /* ---- section-specific ---- */
 
 /* about */
-.about-leaf .link-list {
+.about-leaf .contact-chips {
   margin-top: 16px;
 }
 

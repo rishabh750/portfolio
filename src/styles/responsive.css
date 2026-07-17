@@ -101,6 +101,15 @@
     color: var(--text-faint);
   }
 
+  /* ---- contact chips: icon only, no label ---- */
+  .contact-chip__label {
+    display: none;
+  }
+  .contact-chip {
+    padding: 9px;
+    gap: 0;
+  }
+
   /* ---- leaf content card ---- */
   .tree__leaf-wrap {
     padding: 0 14px;

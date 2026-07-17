@@ -1,8 +1,8 @@
 import type { Profile } from '../../data/types'
-import { BulletList, Panel, leaf } from '../ui'
+import { BulletList, ContactChips, Panel, leaf } from '../ui'
 import type { TreeNode } from '../ui'
 
-// About: availability pill, contact links, summary and highlights.
+// About: availability pill, contact chips, summary and highlights.
 export function aboutSection(profile: Profile): TreeNode {
   const { links } = profile
   return {
@@ -16,24 +16,12 @@ export function aboutSection(profile: Profile): TreeNode {
             {profile.availability}
           </p>
 
-          <ul className="link-list">
-            <li>
-              <a href={links.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href={links.github} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${links.email}`}>{links.email}</a>
-            </li>
-            <li>
-              <a href={`tel:${links.phone.replace(/\s/g, '')}`}>{links.phone}</a>
-            </li>
-          </ul>
+          <ContactChips
+            email={links.email}
+            phone={links.phone}
+            linkedin={links.linkedin}
+            portfolio={links.github}
+          />
         </Panel>
 
         <Panel>
