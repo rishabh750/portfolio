@@ -1,6 +1,5 @@
-import { Panel } from '../ui/Panel'
-import { leaf } from '../ui/TreeColumns'
-import type { TreeNode } from '../ui/TreeColumns'
+import { Panel, leaf } from '../ui'
+import type { TreeNode } from '../ui'
 
 // Awards: a single leaf with one panel per award.
 export function awardsSection(awards: string[]): TreeNode {

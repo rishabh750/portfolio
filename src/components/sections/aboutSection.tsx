@@ -1,8 +1,6 @@
 import type { Profile } from '../../data/types'
-import { BulletList } from '../ui/BulletList'
-import { Panel } from '../ui/Panel'
-import { leaf } from '../ui/TreeColumns'
-import type { TreeNode } from '../ui/TreeColumns'
+import { BulletList, Panel, leaf } from '../ui'
+import type { TreeNode } from '../ui'
 
 // About: availability pill, contact links, summary and highlights.
 export function aboutSection(profile: Profile): TreeNode {

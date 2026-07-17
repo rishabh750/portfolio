@@ -1,0 +1,192 @@
+/* ============================================================
+   Reusable content primitives (pill, links, chips, card head,
+   bullet list) and the section-specific tweaks that build on them.
+   ============================================================ */
+
+/* availability / status pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 15px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.pill__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent);
+  animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+  70% { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* inline row of links */
+.link-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.link-list a {
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.link-list a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* chip cloud */
+.chip-row {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.chip {
+  font-size: 0.8rem;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+/* skill-chip colour themes: technical (orange) vs managerial (yellow-gold) */
+.chip--technical {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 42%, transparent);
+  color: var(--accent-strong);
+}
+.chip--managerial {
+  background: var(--accent-2-soft);
+  border-color: color-mix(in srgb, var(--accent-2) 42%, transparent);
+  color: var(--accent-2);
+}
+/* technical row then managerial row on the next line */
+.chip-row + .chip-row {
+  margin-top: 8px;
+}
+
+/* card heading + meta line */
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.card-head__title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.card-head__sep {
+  color: var(--text-faint);
+}
+.card-head__meta {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+.card-accent {
+  color: var(--accent);
+}
+
+/* list of bullet + plain-text lines (all one font size, justified) */
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bullet-list li {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* bullet lines carry the accent marker; plain lines have no indent/marker */
+.bullet-list__bullet {
+  position: relative;
+  padding-left: 20px;
+}
+.bullet-list__bullet::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* panel section heading — secondary label format */
+.panel__title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+/* ---- section-specific ---- */
+
+/* about */
+.about-leaf .link-list {
+  margin-top: 16px;
+}
+
+/* skills */
+.skills__category {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 13px;
+  color: var(--text);
+}
+
+/* education */
+.edu-entry__degree {
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+.edu-entry__institution {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+.edu-entry__location {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+.edu-entry__dates {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* awards */
+.awards__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-dim);
+  font-size: 0.93rem;
+}
+.awards__icon {
+  color: var(--accent);
+  font-size: 1rem;
+  line-height: 1.6;
+}

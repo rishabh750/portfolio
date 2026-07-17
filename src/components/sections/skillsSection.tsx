@@ -1,8 +1,6 @@
 import type { SkillGroup } from '../../data/types'
-import { ChipRow } from '../ui/ChipRow'
-import { Panel } from '../ui/Panel'
-import { leaf } from '../ui/TreeColumns'
-import type { TreeNode } from '../ui/TreeColumns'
+import { ChipRow, Panel, leaf } from '../ui'
+import type { TreeNode } from '../ui'
 
 // Skills: one branch per category, each revealing a themed chip list.
 // Leadership-style categories get the managerial theme; the rest, technical.

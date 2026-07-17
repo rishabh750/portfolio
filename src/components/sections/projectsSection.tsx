@@ -1,10 +1,6 @@
 import type { Project } from '../../data/types'
-import { BulletList } from '../ui/BulletList'
-import { CardHead } from '../ui/CardHead'
-import { Panel } from '../ui/Panel'
-import { SkillStacks } from '../ui/SkillStacks'
-import { leaf } from '../ui/TreeColumns'
-import type { TreeNode } from '../ui/TreeColumns'
+import { BulletList, CardHead, Panel, SkillStacks, leaf } from '../ui'
+import type { TreeNode } from '../ui'
 
 // Projects: one branch per project, revealing a card whose header floats over
 // an opaque bullets panel plus a skills panel.

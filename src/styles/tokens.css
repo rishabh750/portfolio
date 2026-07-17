@@ -1,0 +1,45 @@
+/* ============================================================
+   Design tokens — colour, glass, scrim. Theme-aware (dark default).
+   Palette: orange / yellow-gold on warm black.
+   `--font` is injected from theme.ts (see main.tsx).
+   ============================================================ */
+
+:root {
+  --bg: #0e1013;
+  --bg-elev: #181b1f;
+  --bg-elev-2: #22262b;
+  --border: #333a41;
+  --text: #eef1f4;
+  --text-dim: #a6b0b8;
+  --text-faint: #6d777f;
+  --accent: #f07d28;
+  --accent-soft: rgba(240, 125, 40, 0.14);
+  --accent-strong: #ffb64d;
+  /* managerial-skill chip theme (yellow-gold) */
+  --accent-2: #e8c14a;
+  --accent-2-soft: rgba(232, 193, 74, 0.14);
+  /* dark tint layered over bg.jpg so cards stay readable */
+  --bg-scrim: linear-gradient(rgba(14, 16, 19, 0.82), rgba(14, 16, 19, 0.9));
+  /* translucent glass for the leaf group card (holds opaque content panels) */
+  --group-glass: rgba(24, 27, 31, 0.28);
+  --radius-sm: 9px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f2f4f7;
+    --bg-elev: #ffffff;
+    --bg-elev-2: #e8ecf1;
+    --border: #d4dae1;
+    --text: #14181c;
+    --text-dim: #4b555d;
+    --text-faint: #7b858d;
+    --accent: #df6a10;
+    --accent-soft: rgba(223, 106, 16, 0.1);
+    --accent-strong: #b8560c;
+    --accent-2: #a97c0a;
+    --accent-2-soft: rgba(169, 124, 10, 0.1);
+    --bg-scrim: linear-gradient(rgba(242, 244, 247, 0.86), rgba(242, 244, 247, 0.92));
+    --group-glass: rgba(255, 255, 255, 0.32);
+  }
+}

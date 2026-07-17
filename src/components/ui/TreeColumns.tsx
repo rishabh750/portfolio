@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import type { CSSProperties, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import { useIsMobile } from '../../hooks/useIsMobile'
 import { Card } from './Card'
+import { Carousel } from './Carousel'
 
 // A node is a LEAF when it has `content` (renders as a content card) and a
 // BRANCH when it has `children`. On desktop the tree renders as Miller columns
@@ -94,24 +95,8 @@ export function TreeColumns({ nodes, ariaLabel, defaultPath = [0] }: TreeColumns
               </div>
             )
           }
-          const active = path[c] ?? 0
           return (
-            <div className="carousel" role="group" key={c}>
-              <div className="carousel__track" style={{ '--active': active } as CSSProperties}>
-                {col.map((node, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    className={`carousel__card${i === active ? ' carousel__card--active' : ''}`}
-                    aria-current={i === active}
-                    onClick={() => select(c, i)}
-                  >
-                    <span className="carousel__title">{node.title}</span>
-                    {node.subtitle && <span className="carousel__subtitle">{node.subtitle}</span>}
-                  </button>
-                ))}
-              </div>
-            </div>
+            <Carousel key={c} items={col} active={path[c] ?? 0} onSelect={(i) => select(c, i)} />
           )
         })}
       </div>

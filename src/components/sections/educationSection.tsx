@@ -1,7 +1,6 @@
 import type { Education } from '../../data/types'
-import { Panel } from '../ui/Panel'
-import { leaf } from '../ui/TreeColumns'
-import type { TreeNode } from '../ui/TreeColumns'
+import { Panel, leaf } from '../ui'
+import type { TreeNode } from '../ui'
 
 // Education: a single leaf with one panel per degree.
 export function educationSection(education: Education[]): TreeNode {

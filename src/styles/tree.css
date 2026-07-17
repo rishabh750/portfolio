@@ -1,0 +1,134 @@
+/* ============================================================
+   Desktop tree — Miller columns and the translucent leaf card that
+   holds opaque content panels.
+   ============================================================ */
+
+.portfolio-tree {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  padding: 10px 28px 8px;
+}
+.tree {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  overflow: hidden;
+}
+.tree__col {
+  flex: 0 0 auto;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* spread cards to fill the full column height */
+  gap: 10px;
+  padding: 2px;
+  scrollbar-width: thin;
+  animation: tree-fade 0.22s ease;
+}
+/* the terminal leaf column grows to use the remaining width; its card fills
+   the full available height and width, content flowing from the top */
+.tree__col--leaf {
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: flex-start;
+}
+.tree__col--leaf .tree__leaf {
+  width: 100%;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+@keyframes tree-fade {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---- branch cards (title-only, reveal the next column) ---- */
+.tree__branch {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 240px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  outline: none;
+}
+/* per-level column widths: level 0 (sections) narrower, level 1 wider */
+.tree__col--l0 .tree__branch {
+  width: 160px;
+}
+.tree__col--l1 .tree__branch {
+  width: 310px;
+}
+.tree__chevron {
+  color: var(--text-faint);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.tree__branch--active {
+  --card-line: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft) !important;
+}
+.tree__branch--active .tree__chevron {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+.tree__branch:hover,
+.tree__branch:focus-visible {
+  --card-line: var(--accent);
+}
+.tree__branch-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.tree__branch-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tree__branch-subtitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-faint);
+}
+
+/* ---- leaf group card + its content panels ---- */
+.tree__leaf {
+  width: 100%;
+  align-self: stretch;
+  --card-bg: var(--group-glass);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.leaf-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.panel {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 18px 14px;
+}
+.panel > :first-child {
+  margin-top: 0;
+}
