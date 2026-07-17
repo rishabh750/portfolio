@@ -160,6 +160,11 @@
 /* ---- section-specific ---- */
 
 /* about */
+.about-leaf .pill {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+}
 .about-leaf .contact-chips {
   margin-top: 16px;
 }
