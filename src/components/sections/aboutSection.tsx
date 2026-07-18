@@ -20,7 +20,7 @@ export function aboutSection(profile: Profile): TreeNode {
             email={links.email}
             phone={links.phone}
             linkedin={links.linkedin}
-            portfolio={links.github}
+            portfolio={links.portfolio}
           />
         </Panel>
 

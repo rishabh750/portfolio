@@ -1,10 +1,10 @@
 /* ============================================================
-   Design tokens — colour, glass, scrim. Theme-aware (dark default).
+   Design tokens — colour, glass, scrim, font. Theme-aware (dark default).
    Palette: orange / yellow-gold on warm black.
-   `--font` is injected from theme.ts (see main.tsx).
    ============================================================ */
 
 :root {
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --bg: #0e1013;
   --bg-elev: #181b1f;
   --bg-elev-2: #22262b;

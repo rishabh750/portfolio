@@ -17,7 +17,7 @@ export interface Profile {
     email: string
     phone: string
     linkedin: string
-    github: string
+    portfolio: string
   }
 }
 
@@ -53,6 +53,10 @@ export interface Project {
   bullets: string[]
   /** skills used in this project */
   skills?: SkillSet
+  /** optional external URL; rendered as a full-width link chip below the title */
+  link?: string
+  /** placeholder label shown in the link chip (with a web icon) instead of the URL */
+  linkLabel?: string
 }
 
 export interface Resume {

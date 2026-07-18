@@ -1,8 +1,5 @@
 import type { ReactNode } from 'react'
-import EmailRoundedIcon from '@mui/icons-material/EmailRounded'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded'
-import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded'
+import { EmailIcon, LinkedInIcon, PhoneIcon, GlobeIcon } from './icons'
 
 interface ContactChipsProps {
   email: string
@@ -22,10 +19,10 @@ interface Contact {
 // a label. On mobile the label is hidden via CSS, leaving an icon-only chip.
 export function ContactChips({ email, phone, linkedin, portfolio }: ContactChipsProps) {
   const contacts: Contact[] = [
-    { label: 'Email', href: `mailto:${email}`, icon: <EmailRoundedIcon /> },
+    { label: 'Email', href: `mailto:${email}`, icon: <EmailIcon /> },
     { label: 'LinkedIn', href: linkedin, icon: <LinkedInIcon />, external: true },
-    { label: 'Mobile', href: `tel:${phone.replace(/\s/g, '')}`, icon: <PhoneRoundedIcon /> },
-    { label: 'Portfolio', href: portfolio, icon: <LanguageRoundedIcon />, external: true },
+    { label: 'Mobile', href: `tel:${phone.replace(/\s/g, '')}`, icon: <PhoneIcon /> },
+    { label: 'Portfolio', href: portfolio, icon: <GlobeIcon />, external: true },
   ]
 
   return (

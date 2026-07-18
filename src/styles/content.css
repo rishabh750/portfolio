@@ -120,6 +120,40 @@
   color: var(--accent);
 }
 
+/* full-width link chip rendered below a card title */
+.link-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.link-chip:hover {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.link-chip__icon {
+  width: 17px;
+  height: 17px;
+}
+/* inert chip shown when the link is an empty string */
+.link-chip--empty {
+  background: var(--bg-elev-2);
+  border-color: var(--border);
+  color: var(--text-faint);
+  cursor: default;
+  pointer-events: none;
+}
+
 /* list of bullet + plain-text lines (all one font size, justified) */
 .bullet-list {
   list-style: none;

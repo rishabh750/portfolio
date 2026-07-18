@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import type { ReactNode } from 'react'
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import { useIsMobile } from '../../hooks/useIsMobile'
 import { Card } from './Card'
 import { Carousel } from './Carousel'
+import { ChevronRightIcon } from './icons'
 
 // A node is a LEAF when it has `content` (renders as a content card) and a
 // BRANCH when it has `children`. On desktop the tree renders as Miller columns
@@ -53,11 +53,7 @@ function drillToLeaf(nodes: TreeNode[], path: number[]): number[] {
 }
 
 const leafCard = (node: TreeNode, key: number) => (
-  <Card
-    key={key}
-    className={`tree__leaf${node.className ? ` ${node.className}` : ''}`}
-    sx={{ px: 3, pt: 1.5, pb: 3 }}
-  >
+  <Card key={key} className={`tree__leaf${node.className ? ` ${node.className}` : ''}`}>
     {node.content}
   </Card>
 )
@@ -122,7 +118,6 @@ export function TreeColumns({ nodes, ariaLabel, defaultPath = [0] }: TreeColumns
                 aria-expanded={active}
                 tabIndex={0}
                 className={`tree__branch${active ? ' tree__branch--active' : ''}`}
-                sx={{ px: 2, py: 1.5 }}
                 onMouseEnter={() => select(c, i)}
                 onFocus={() => select(c, i)}
                 onClick={() => select(c, i)}
@@ -131,7 +126,7 @@ export function TreeColumns({ nodes, ariaLabel, defaultPath = [0] }: TreeColumns
                   <span className="tree__branch-title">{node.title}</span>
                   {node.subtitle && <span className="tree__branch-subtitle">{node.subtitle}</span>}
                 </span>
-                <ChevronRightRoundedIcon fontSize="small" className="tree__chevron" />
+                <ChevronRightIcon className="tree__chevron" />
               </Card>
             )
           })}

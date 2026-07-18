@@ -15,7 +15,7 @@
       "email": "rishabhjoshi7@gmail.com",
       "phone": "+44 07925152578",
       "linkedin": "https://www.linkedin.com/in/rishabhjoshi-rjoshi",
-      "github": "https://github.com/rishabh750"
+      "portfolio": "https://github.com/rishabh750"
     }
   },
   "skills": [
@@ -303,7 +303,38 @@
           "Positioning",
           "User Research"
         ]
-      }
+      },
+      "link": "",
+      "linkLabel": "View Project"
+    },
+    {
+      "name": "InterviewPrep — AI-Powered Interview Quiz & Notes Generator",
+      "org": "Personal Project",
+      "dates": "Jun 2026 – Jul 2026",
+      "bullets": [
+        "- Engineered a full-stack web app that generates interview quizzes and study notes on demand, streaming responses live from multiple LLMs (Gemini, Claude, GPT) through a server-side proxy that keeps user API keys off the client.",
+        "- Implemented end-to-end encryption on every API call using a hybrid RSA and AES scheme, keeping payloads unreadable in the browser, and secured sessions with JWT and hashed passwords.",
+        "- Architected a stateless backend with a shared MongoDB store, keeping sessions and user data consistent across distributed serverless instances on Vercel.",
+        "- Developed a real-time streaming pipeline with a fault-tolerant parser that reliably extracts a complete quiz even from partial or truncated model output.",
+        "- Designed a document-based data model that stores each user's quizzes, questions, and answers together, with an in-memory fallback for local development."
+      ],
+      "skills": {
+        "technical": [
+          "React",
+          "Vite",
+          "Python",
+          "FastAPI",
+          "MongoDB",
+          "LLM Integration (Gemini/Claude/GPT)",
+          "Applied Cryptography (RSA/AES)",
+          "JWT Auth",
+          "Serverless (Vercel)",
+          "SSE Streaming"
+        ],
+        "managerial": []
+      },
+      "link": "https://rjoshi-interviewprep.vercel.app",
+      "linkLabel": "InterviewPrep"
     },
     {
       "name": "Distributed Consensus & Fault Tolerance Analysis",
@@ -324,7 +355,9 @@
           "Research",
           "Technical Writing"
         ]
-      }
+      },
+      "link": "",
+      "linkLabel": "View Project"
     },
     {
       "name": "Multicore Performance & Parallel Framework Analysis",
@@ -345,7 +378,9 @@
           "Research",
           "Technical Writing"
         ]
-      }
+      },
+      "link": "",
+      "linkLabel": "View Project"
     },
     {
       "name": "Technical Product Strategy & Market Development",
@@ -365,7 +400,9 @@
           "Positioning",
           "Roadmapping"
         ]
-      }
+      },
+      "link": "",
+      "linkLabel": "View Project"
     },
     {
       "name": "ZEPHYR-II: Unmanned Aerial Vehicle",
@@ -385,7 +422,9 @@
           "Team Leadership",
           "Project Planning"
         ]
-      }
+      },
+      "link": "",
+      "linkLabel": "View Project"
     }
   ]
 }

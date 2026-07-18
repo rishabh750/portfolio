@@ -13,14 +13,14 @@ expand left → right on hover); on mobile the same tree becomes a stack of
 | ------------------ | -------------------------------------------------- |
 | Framework          | React 18 + TypeScript (strict, `noUnusedLocals`)   |
 | Build tool         | Vite 5                                             |
-| Component surfaces  | MUI (`@mui/material`) — only `Card` + theme        |
+| Dependencies       | React + ReactDOM only (no UI kit)                  |
 | Styling            | Plain CSS with custom properties (design tokens)   |
 | State              | React Context (read-only resume data) + local state |
 | Data               | `public/data.json` fetched at runtime              |
 
-MUI is used deliberately lightly: only the `Card` surface and a theme that
-carries the font and primary colour. Everything visual is driven by CSS custom
-properties so light/dark and the orange/yellow palette stay in one place.
+There is no component library: the `Card` is a plain styled `<div>`, icons are
+small inline SVGs (`ui/icons.tsx`), and everything visual is driven by CSS
+custom properties so light/dark and the orange/yellow palette stay in one place.
 
 ---
 
@@ -39,8 +39,7 @@ flowchart TD
     CAR --> LEAF
 ```
 
-1. `main.tsx` mounts the app inside `ThemeProvider` + `ResumeProvider`, and
-   injects the theme font into CSS as `--font` via `GlobalStyles`.
+1. `main.tsx` mounts the app inside `ResumeProvider`.
 2. `ResumeProvider` fetches `data.json` once, validates the shape against the
    `Resume` type, and exposes it through `useResume()`.
 3. `PortfolioTree` turns the typed data into a `TreeNode[]` by calling one
@@ -61,9 +60,8 @@ portfolio/
 ├─ docs/
 │  └─ architecture.md    # this file
 └─ src/
-   ├─ main.tsx           # entry: providers + inject --font
+   ├─ main.tsx           # entry: ResumeProvider + App
    ├─ App.tsx            # frozen header + <PortfolioTree/>
-   ├─ theme.ts           # single source of typography + MUI primary colour
    ├─ index.css          # imports the modular style layers
    ├─ data/
    │  ├─ types.ts        # Resume domain types (Profile, Experience, SkillSet, …)
@@ -80,8 +78,8 @@ portfolio/
    │  └─ ui/             # generic, resume-agnostic primitives
    │     ├─ TreeColumns.tsx  # the tree renderer (desktop + mobile switch)
    │     ├─ Carousel.tsx     # mobile swipe carousel (scroll-snap)
-   │     ├─ Card.tsx  Panel.tsx  CardHead.tsx
-   │     ├─ BulletList.tsx  ChipRow.tsx  SkillStacks.tsx
+   │     ├─ Card.tsx  Panel.tsx  CardHead.tsx  icons.tsx
+   │     ├─ BulletList.tsx  ChipRow.tsx  SkillStacks.tsx  ContactChips.tsx
    │     └─ index.ts     # barrel
    └─ styles/            # modular CSS layers (imported by index.css in order)
       ├─ tokens.css      # design tokens (colour, glass, scrim) + light theme
@@ -167,8 +165,8 @@ relaxed on mobile so the page scrolls vertically instead.
 - **Chip themes** — `ChipRow` applies `chip--technical` (orange) or
   `chip--managerial` (yellow-gold, `--accent-2`) consistently everywhere skills
   appear.
-- **Typography** — defined once in `theme.ts` and shared with the CSS via the
-  injected `--font` variable, so MUI and plain CSS use the same font.
+- **Typography** — the `--font` token in `styles/tokens.css` is the single font
+  definition; `body` inherits it.
 
 ---
 
@@ -180,8 +178,7 @@ relaxed on mobile so the page scrolls vertically instead.
 - **Change content:** edit `public/data.json` — no code changes. Bullet lines
   are marked with a leading `- ` prefix; a line without it renders as plain
   context text (see `BulletList`).
-- **Retheme:** edit the tokens in `styles/tokens.css` (and `theme.ts` for the
-  MUI primary + font).
+- **Retheme:** edit the tokens in `styles/tokens.css` (colour, glass, font).
 - **Change the mobile breakpoint:** the single `720` in `useIsMobile.ts` and the
   `@media` query in `responsive.css`.
 

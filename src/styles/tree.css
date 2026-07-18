@@ -3,6 +3,33 @@
    holds opaque content panels.
    ============================================================ */
 
+/* content / branch card: fading top & bottom rule, no side borders. Background
+   and line colour come from --card-bg / --card-line so callers theme by
+   setting a variable rather than overriding rules. */
+.card {
+  position: relative;
+  background-color: var(--card-bg, var(--bg-elev));
+  color: var(--text);
+  border-radius: 12px;
+  transition: background-color 0.15s ease;
+}
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, var(--card-line, var(--border)) 14%, var(--card-line, var(--border)) 86%, transparent);
+}
+.card::before {
+  top: 0;
+}
+.card::after {
+  bottom: 0;
+}
+
 .portfolio-tree {
   flex: 1 1 auto;
   min-height: 0;
@@ -57,11 +84,12 @@
 
 /* ---- branch cards (title-only, reveal the next column) ---- */
 .tree__branch {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   width: 240px;
+  padding: 12px 16px;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.95rem;
@@ -75,13 +103,16 @@
   width: 310px;
 }
 .tree__chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
   color: var(--text-faint);
   transition: color 0.15s ease, transform 0.15s ease;
 }
 .tree__branch--active {
   --card-line: var(--accent);
+  --card-bg: var(--accent-soft);
   color: var(--accent);
-  background: var(--accent-soft) !important;
 }
 .tree__branch--active .tree__chevron {
   color: var(--accent);
@@ -114,6 +145,7 @@
 .tree__leaf {
   width: 100%;
   align-self: stretch;
+  padding: 12px 24px 24px;
   --card-bg: var(--group-glass);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);

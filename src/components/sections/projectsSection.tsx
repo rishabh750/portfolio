@@ -12,7 +12,7 @@ export function projectsSection(projects: Project[]): TreeNode {
       children: leaf(
         p.name,
         <div className="leaf-body">
-          <CardHead title={p.name} meta={`${p.org} · ${p.dates}`} />
+          <CardHead title={p.name} meta={`${p.org} · ${p.dates}`} link={p.link} linkLabel={p.linkLabel} />
           <Panel>
             <BulletList items={p.bullets} />
           </Panel>
