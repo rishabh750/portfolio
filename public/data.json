@@ -13,9 +13,9 @@
     ],
     "links": {
       "email": "rishabhjoshi7@gmail.com",
-      "phone": "+44 07925152578",
-      "linkedin": "https://www.linkedin.com/in/rishabhjoshi-rjoshi",
-      "portfolio": "https://github.com/rishabh750"
+      "phone": "+44 7925152578",
+      "linkedin": "https://www.linkedin.com/in/rjoshi95",
+      "portfolio": "https://rjoshi.vercel.app"
     }
   },
   "skills": [
@@ -240,7 +240,7 @@
     },
     {
       "company": "Infosys Ltd.",
-      "role": "Software Engineer (SDE 1)",
+      "role": "Systems Engineer",
       "dates": "Dec 2017 – Sep 2019",
       "location": "Bengaluru, India",
       "deliverables": [
