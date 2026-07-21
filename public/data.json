@@ -13,7 +13,10 @@
     ],
     "links": {
       "email": "rishabhjoshi7@gmail.com",
-      "phone": "+44 7925152578",
+      "phone": {
+        "GB": "+44 7925152578",
+        "IN": "+91 XXXXXXXXXX"
+      },
       "linkedin": "https://www.linkedin.com/in/rjoshi95",
       "portfolio": "https://rjoshi.vercel.app"
     }
@@ -125,8 +128,9 @@
       "dates": "Sep 2023 – Aug 2025",
       "location": "Bengaluru, India",
       "deliverables": [
-        "Pricing & Promotions Team — Supervised a squad of 3 as the Service Owner, to design, scale, and operate 3 Pricing Services producing Global Price Quotations.",
-        "- Led phased rollout of Redis Cache for high-throughput APIs (negligible billing impact) and tuned Kubernetes to 75% utilisation for Black Friday 2024 peak via HPA fine-tuning, halving database I/O latency through restructured indexing.",
+        "Pricing & Promotions Team — Supervised a squad of 3 as the Service Owner to design, scale, and operate 3 Pricing Services producing Global Price Quotations.",
+        "- Led canary rollout of Redis Cache for high-throughput APIs, pairing it with restructured database indexing to halve I/O latency while keeping billing impact negligible.",
+        "- Tuned Kubernetes autoscaling (HPA) to sustain 75% utilisation through the Black Friday 2024 peak.",
         "- Migrated multiple services from Java 8 to 21 and AWS to GCP with zero rollbacks and 99.999% availability, while partnering with stakeholders to slash post-migration latency from 250ms to 20ms.",
         "- Redesigned Sale creation flow, dropping scheduling time from 32 to 4 hours while eradicating scheduling failures and improving code quality to Grade \"A\" across SonarQube Quality Gate."
       ],
@@ -189,14 +193,14 @@
       "dates": "Apr 2021 – Aug 2022",
       "location": "Bengaluru, India",
       "deliverables": [
-        "Campaign Editor — Led a team of 6 to develop a self-service tool for merchants to request edits on live campaigns, using React to build a dynamic, state-managed interface for complex deal configurations.",
+        "Campaign Editor — Led a team of 6 to build a self-service tool, with a strong focus on seamless UX, enabling merchants to safely edit live campaigns whose complex configurations could directly impact active sales.",
         "- Refactored Salesforce case creation & automated pipeline cleanup, yielding 20% latency improvement and 50% drop in manual intervention.",
-        "Virtual Advisor — Created a recommendation platform from scratch, delivering a high-performance React dashboard.",
+        "Virtual Advisor — Created a recommendation platform from scratch, delivering a high-performance dashboard.",
         "- Launched the MVP for 1M+ merchants, generating 8M+ recommendations across 5 pilot use cases."
       ],
       "impact": [
         "- CAP (Channels and Platform) Asha Knowledge Sharing (Organiser & Mentor) — 6 months.",
-        "- 60% fewer pager alerts via improved monitoring & best practices (mentored team)."
+        "- 60% fewer pager alerts by mentoring the team on improved monitoring & best practices."
       ],
       "skills": {
         "technical": [
@@ -244,7 +248,7 @@
       "dates": "Dec 2017 – Sep 2019",
       "location": "Bengaluru, India",
       "deliverables": [
-        "- As part of the Sense Team at Infosys Center of Emerging Technologies (R&D unit), optimised latencies by 50% for Digital Twin and Location-Based Services POCs, demonstrated at AWS re:Invent 2018, World Economic Forum 2019, and Australian Open 2019."
+        "- As part of the Sense Team at Infosys Center for Emerging Technologies (R&D unit), optimised latencies by 50% for Digital Twin and Location-Based Services POCs, demonstrated at AWS re:Invent 2018, World Economic Forum 2019, and Australian Open 2019."
       ],
       "impact": [],
       "skills": {
@@ -287,7 +291,7 @@
       "org": "University of St Andrews",
       "dates": "May 2026 – Aug 2026",
       "bullets": [
-        "- Analysed the current edtech landscape through a product lens, identifying delayed feedback and shallow engagement metrics as the core gap between assessment and genuine learning.",
+        "- Analysed the current EdTech landscape through a product lens, identifying delayed feedback and shallow engagement metrics as the core gap between assessment and genuine learning.",
         "- Defined the Vision, strategy, and value proposition for a \"Testing-as-Learning\" application, positioning immediate formative feedback as the differentiator against retention-driven gamified platforms.",
         "- Built the application to deliver real-time rationale at the point of assessment, turning flat test UIs into interactive conceptual learning experiences."
       ],
@@ -341,7 +345,7 @@
       "org": "University of St Andrews",
       "dates": "Feb 2026 – Apr 2026",
       "bullets": [
-        "- Evaluated the Paxos consensus protocol under asynchronous failures (node, broker, message drops) and designed a heartbeat-monitoring architecture, analysing latency vs. safety trade-offs."
+        "- Evaluated the Paxos consensus protocol under node, network, and message-drop failures by implementing a watchdog-based failure detector, and analysed the trade-off between consensus latency and cluster stability."
       ],
       "skills": {
         "technical": [
@@ -368,11 +372,12 @@
       ],
       "skills": {
         "technical": [
-          "C++",
-          "OpenMP",
-          "MPI",
           "Parallel Computing",
-          "Benchmarking"
+          "Concurrency",
+          "Erlang",
+          "Haskell",
+          "Benchmarking",
+          "Performance Analysis"
         ],
         "managerial": [
           "Research",

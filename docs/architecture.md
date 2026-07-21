@@ -67,7 +67,8 @@ portfolio/
    │  ├─ types.ts        # Resume domain types (Profile, Experience, SkillSet, …)
    │  └─ ResumeContext.tsx  # fetch data.json + useResume() hook
    ├─ hooks/
-   │  └─ useIsMobile.ts  # matchMedia breakpoint hook
+   │  ├─ useIsMobile.ts  # matchMedia breakpoint hook
+   │  └─ useRegion.ts    # infer visitor region (IN/GB) from browser timezone
    ├─ components/
    │  ├─ PortfolioTree.tsx   # assembles section builders into one tree
    │  ├─ sections/       # one builder per section (data -> TreeNode)
@@ -191,6 +192,8 @@ relaxed on mobile so the page scrolls vertically instead.
 ```
 Resume {
   profile:    { name, title, location, availability, summary, highlights[], links{…} }
+              // links.phone is region-keyed { GB, IN }; useRegion() picks which
+              // number the contact chip shows, inferred from browser timezone.
   skills:     { category, items[] }[]
   experience: { company, role, dates, location, deliverables[], impact[], skills? }[]
   education:  { degree, institution, location, dates }[]

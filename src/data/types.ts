@@ -15,7 +15,8 @@ export interface Profile {
   highlights: string[]
   links: {
     email: string
-    phone: string
+    /** Region-keyed phone numbers (e.g. GB, IN); the visitor's region picks one. */
+    phone: Record<string, string>
     linkedin: string
     portfolio: string
   }
